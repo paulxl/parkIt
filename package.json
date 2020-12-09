@@ -1,0 +1,19 @@
+{
+  "name": "parkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulxl/parkIt.git"
+  },
+  "author": "paulxl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulxl/parkIt/issues"
+  },
+  "homepage": "https://github.com/paulxl/parkIt#readme"
+}
