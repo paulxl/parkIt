@@ -1,0 +1,90 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+
+header {
+    font-family: 'Pacifico', cursive;
+    font-size: xxx-large;
+}
+/* TODO: Work in progress, i want an image on landing page not covering whole screen
+With Park(it); logo and possible a submit form....or whole screen idk with links to other pages
+or actual website.*/
+.header_div {
+    text-align: center;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/Parkit_photos/landing\ photo.JPG);
+}
+/* Makes class size and font style. Also makes font have a hover effect */
+.typeWriter {
+    font-family: 'Pacifico', cursive;
+    font-size: xxx-large;
+    background-color: transparent;
+    border: transparent;
+}
+
+.typeWriter:hover {    
+    color: grey;
+}
+#comeGo {
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    animation: fadeinout ease 7s infinite alternate;
+    -webkit-animation: fadeinout ease 7s infinite alternate;
+    -moz-animation: fadeinout 7s infinite alternate;
+    -o-animation: fadeinout 7s infinite alternate;
+    -ms-animation: fadeinout 7s infinite alternate;
+    opacity: 0;
+   }
+    
+   @keyframes fadeinout {
+    50% {
+    opacity: 1;
+    }
+    /* 100% {
+    opacity: 1;
+    } */
+   }
+    
+   @-moz-keyframes fadeinout {
+    50% {
+    opacity: 1;
+    }
+    /* 100% {
+    opacity: 1;
+    } */
+   }
+    
+   @-webkit-keyframes fadeinout {
+    50% {
+    opacity: 1;
+    }
+    /* 100% {
+    opacity: 1;
+    } */
+   }
+    
+   @-o-keyframes fadeinout {
+    50% {
+    opacity: 1;
+    }
+    /* 100% {
+    opacity: 1;
+    } */
+   }
+    
+   @-ms-keyframes fadeinout {
+    50% {
+    opacity: 1;
+    }
+    /* 100% {
+    opacity: 1;
+    } */
+   }
