@@ -1,0 +1,30 @@
+* {
+  text-align: center;
+  color: #0000cc;
+}
+
+i {
+  color: green;
+}
+#todayRise,
+#todaySet {
+  color: #ff9933;
+}
+#todayDawn,
+#todayDusk {
+  color: #ffcc33;
+}
+
+#mapid {
+  height: 720px;
+  width: 80%;
+  transform-origin: 0 0;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 100px;
+}
+
+/* .myDivIcon {
+  text-align: center;
+  color: red;
+} */
