@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="connect.css">
+    <script src="https://kit.fontawesome.com/16c1934ef9.js" crossorigin="anonymous"></script>
+
+    <title>Connections</title>
+</head>
+<body>
+ <!--NAVIGATION_BAR-->
+ <header id="parkIt_header">
+    <nav class="navbar-container">
+
+        <!--Hamburger Menu-->
+        <div class="dropdown">
+            <button class="dropbtn">
+                <div class="menuContainer" onclick="transformIcon(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </button>
+            <div class="dropdown-content" id="drop-menu">
+                <a href="../welcome_Page/index.html">Home</a>
+                <a href="../welcome_Page/index.html#about">About</a>
+                <a href="../mapIt/mapIt.html">Find A Hike</a>
+                <a href="../links/link.html">Resources</a>
+                <a href="#"></a>
+            </div>
+        </div>
+
+        <!--Website Logo-->
+        <div class="navbar-brand">Park(It);</div>
+    </nav>
+</header>
+
+<!--PAGE_BANNER-->
+<h1 class="banner_resources">Join a hike</h1>
+<h2>Create a hike</h2>
+<div id="user_Input">
+
+<form action="" id="input_Form">
+    <div class="input1">
+<label for="type">Type</label>
+
+        <select  id="pullDownType">
+
+            <option value="hike">Hike </option>
+
+            <option value="bike">Bike</option>
+
+            <option value="run">Run</option>
+
+
+        </select>
+    </div>
+
+        <div class="input1">
+            <label for="">Organizer</label>
+            <input type="text" name="organizer" placeholder="Your name here" id="organizer"></div>
+        <div class="input1">
+            <label for="">Pick Date</label><input type="date" name="" placeholder="" id="date"></div>
+
+        <div class="input1" id='time'>
+    <label for="date">Pick time</label>
+    <input type="time" name="time" id="time">
+        </div>
+        <div class="input1">
+            <label for="">Trail</label><input type="text" name="trail" placeholder="" id="trail"></div>
+        <div class="input1">
+            <label for="">Meeting Location</label><textarea name="meet" placeholder="Location To meet" id="meet" rows="5"></textarea></div>
+        <div class="input1" >
+            <button id="btn1" type="submit">Create</button></div>
+
+
+
+
+
+
+</form>
+</div>
+<div id="breakPic"></div>
+<div id="container"></div>
+
+
+
+    <script src="connect.js"></script>
+</body>
+</html>
