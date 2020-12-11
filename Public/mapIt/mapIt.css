@@ -1,6 +1,10 @@
 * {
   text-align: center;
   color: #0000cc;
+  font-family: Proxima Nova, Arial, sans-serif;
+}
+#pInfo {
+  color: #0000cc;
 }
 
 i {
