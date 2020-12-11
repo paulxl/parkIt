@@ -17,7 +17,7 @@ or actual website.*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(/Parkit_photos/landing\ photo.JPG);
+    background-image: url(../Parkit_photos/landing\ photo.JPG);
 }
 /* Makes class size and font style. Also makes font have a hover effect */
 .typeWriter {
@@ -30,9 +30,209 @@ or actual website.*/
 .typeWriter:hover {    
     color: grey;
 }
-#comeGo {
+p {
+    font-family: 'Song Myung', serif;
+    text-decoration: wavy;
+    text-shadow:.5px .5px chartreuse;
+}
+.h2 {
+    font-family: 'Song Myung', cursive;
+}
+@media screen and (max-width: 650px) {
+    .about_inner_column {
+      width: 100%;
+      display: block;
+    }
+
+  }
+  html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  @media screen and (min-width: 600px) {
+    .about_text {
+        font-size: 1.5rem;
+        
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .about_text {
+        font-size: -2rem;
+    }
+    
+}
+  .about_text {
+      background-color: honeydew;
+      font-family: 'Grand Hotel', cursive;
+        }
+
+@media screen and (min-width: 600px) {
+.p_about_text {
+font-size: 2rem;
+                
+ }
+        
+}
+@media screen and (max-width: 600px) {
+ .p_about_text {
+ font-size: -2rem;
+ }
+            
+ }
+  .p_about_text {
+      background-color: honeydew;
+      margin-bottom: 0;
+  }
+
+.about_outer {
+color: grey;
+background-color:darkcyan;
+}
+.about_inner_column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    background-color: honeydew;
+}
+.container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .about_outer::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .title {
+    color: grey;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  /* fix the keyframes for desired effect.. apparently anchor tags need a::visted to
+  inherit after body. Seems as why my keyframes may have not been working. */
+button {
+    background-color: transparent;
+    border: transparent;
+}
+
+.b_awesome {
+    font-size: 30px;
+}
+  
+
+button::before {
+    content: '';
+    font-size: 30px;
+    
+    transform: translate(-50%, -50%);
+    transition: all .3s ease-in-out 0s;
+    
+}
+  
+  .b_awesome:hover, .b_awesome:focus {
+    color: green;
+    transform: translateY(-6px);
+}
+  
+  button:hover::before, button:focus::before {
+    opacity: 1;
+}
+ 
+  button::after {
+   content: '';
+   width: 30px; height: 30px;
+   border-radius: 50%;
+   border: 6px solid greenyellow;
+   position: absolute;
+   z-index: -1;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   animation: ring 1.5s infinite;
+}
+  
+ 
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+ 
+  .spacer {
+      /* background-image: url(../Parkit_photos/wa_mountains_1_800.jpg); */
+      height: 30%;
+      margin-bottom: -5rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: honeydew;
+      text-align: center;
+      font-size: xx-large;
+      border: honeydew;
+      border-style: groove;
+  }
+  .span {
+      font-family: 'Pacifico', cursive;
+  }
+  .span2 {
+      font-style: italic;
+      font-size: xx-large;
+  }
+  .img {
+    float: left;
+    width:  30rem;
+    height: 50rem;
+    object-fit: cover;
+}
+.navbar {
+    width: 4%;
+    background-color: #555;
+    overflow: auto;
+    margin-bottom: 0%;
+  }
+  
+  .navbar a {
+    float: left;
     text-align: center;
-    align-items: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+  
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+
+  
+#comeGo {
+    text-align: none;
+    align-items: none;
     margin-left: auto;
     margin-right: auto;
     display: block;
