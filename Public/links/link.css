@@ -5,10 +5,6 @@ html {
     font-family: Proxima Nova, Arial, sans-serif;
 }
 
-header {
-    /* font-weight: 700; */
-}
-
 .navbar-container {
     position: relative;
     display: flex;
