@@ -20,6 +20,8 @@ document.querySelector("#input_Form").addEventListener("submit", dataInput);
 function dataInput(e) {
     e.preventDefault();
     console.log("inside dataInput");
+    // grab dateTimeStamp and equal to id
+    let id = e.timeStamp;  
     let type = document.getElementById("pullDownType").value;
     let organizer = document.getElementById("organizer").value;
     let date = document.getElementById("date").value;
@@ -27,8 +29,8 @@ function dataInput(e) {
     let trail = document.getElementById("trail").value;
     let meet = document.getElementById("meet").value;
     
-    arrTrips.push(type, organizer, date, time, trail, meet);
-    let tempTrip = [type, organizer, date, time, trail, meet];
+    arrTrips.push(id, type, organizer, date, time, trail, meet);
+    let tempTrip = [id, type, organizer, date, time, trail, meet];
     createCard(tempTrip);
     // PUT request on the backend
 
@@ -37,6 +39,7 @@ function dataInput(e) {
 
 
 function createCard(trip) {  // <<<<< sending array in
+    
     // create the card, and send to #container
 
 
@@ -47,13 +50,20 @@ function createCard(trip) {  // <<<<< sending array in
 
 
 
+
 }
     // send in trip to DELETE
-function deleteTrip(trip) {
+function deleteTrip(tripId) {
     document.querySelector("#delete_Form").addEventListener("submit");
     // listen to all values, and put them into an array
     
+    for (let index = 0; index < tripId.length; index++) {
+        // const element = array[index];
+       // when array[index].id === tripId
 
+
+       
+    }
 
 
     //call backened and send array to DELETE
