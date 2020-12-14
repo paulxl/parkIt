@@ -20,8 +20,8 @@ i {
 }
 
 #mapid {
-  height: 720px;
-  width: 80%;
+  height: auto;
+  width: 90%;
   transform-origin: 0 0;
   margin-left: 10%;
   margin-right: 10%;
