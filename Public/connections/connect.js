@@ -1,13 +1,38 @@
+/*  Swaps out the words "It" and "You" in the logo when clicked */
+// var button = document.getElementById("it_you");
+// button.addEventListener('click', function() {
+//   if (button.getAttribute("data-text-swap") == button.innerHTML) {
+//     button.innerHTML = button.getAttribute("data-text-original");
+//   } else {
+//     button.setAttribute("data-text-original", button.innerHTML);
+//     button.innerHTML = button.getAttribute("data-text-swap");
+//   }
+// }, false);
+ 
+// /* Transforms the hamburg menu icon when clicked */
+// function transformIcon(x) {
+//     x.classList.toggle("change");
+// }
+
+window.onload =init();
 const arrTrips = []
 function init() {
     // we are going to call backend, and then GET arrTrips.
     // then PUSH results into arrTrips
     // create for loop to create a container/cards in bottom div (#container)
-    for (let i = 0; i< arrTrips.length; i++) {
-        createCard(arrTrips[i]); 
-    }
-        
+    axios.get(" https://parkbackside.herokuapp.com/connections").then((res) => {
+        const stored = res.data;
+        console.log("i got the data")
+        arrTrips.push(stored);
 
+        for (let i = 0; i< arrTrips.length; i++) {
+            createCard(arrTrips[i]); 
+
+
+
+
+        }
+    })
 }
 
 
@@ -41,7 +66,28 @@ function dataInput(e) {
 function createCard(trip) {  // <<<<< sending array in
     
     // create the card, and send to #container
+    let div = document.getElementById("container")
+    let card = document.createElement("div")
+    card.setAttribute("class", "card")
+    card.style.width = "25em"
+    card.style.margin = "5em"
+    let img = document.createElement("img")
+    img.setAttribute("class", "cardImg")
+    img.setAttribute("src", "/parkIt/Public/Parkit_photos/compassRose.png")
+    
 
+    let savedInfo = document.createElement("p")
+    let deleteBtn = document.createElement("button")
+    deleteBtn.innerHTML = "Delete"
+    deleteBtn.id = "delete_Form"
+    let updateBtn = document.createElement("button")
+    updateBtn.innerHTML = "Update"
+    updateBtn.id = "update_Form"
+    // savedInfo.id = ""
+    // savedInfo.innerHTML = stored
+    card.appendChild
+    div.append(card, savedInfo, deleteBtn, updateBtn);
+    newDiv.innerHTML = arrTrips;
 
     // when we create card, also create an UPDATE button and a DELETE button
 
@@ -54,16 +100,11 @@ function createCard(trip) {  // <<<<< sending array in
 }
     // send in trip to DELETE
 function deleteTrip(tripId) {
-    document.querySelector("#delete_Form").addEventListener("submit");
+    document.querySelector("#delete_Form").addEventListener("click")
+    axios.delete(`https://parkbackside.herokuapp.com/connections/${tripId}`).then(init())
     // listen to all values, and put them into an array
     
-    for (let index = 0; index < tripId.length; index++) {
-        // const element = array[index];
-       // when array[index].id === tripId
-
-
-       
-    }
+    
 
 
     //call backened and send array to DELETE
@@ -77,8 +118,8 @@ function deleteTrip(tripId) {
 }
 
 function updateTrip(trip) {
-    document.querySelector("#update_Trip").addEventListener("submit");
-
+    document.querySelector("#update_Trip").addEventListener("click");
+    axios.put(`https://parkbackside.herokuapp.com/connections/${trip}`).then(init())
     // listen to all value, add them to an exsisting array
 
     // on submit, call array, and preform a PUT request
