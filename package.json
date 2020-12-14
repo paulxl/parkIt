@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/paulxl/parkIt/issues"
   },
-  "homepage": "https://github.com/paulxl/parkIt#readme"
+  "homepage": "https://github.com/paulxl/parkIt#readme",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
 }
