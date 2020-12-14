@@ -132,6 +132,24 @@ button {
     color: white;
     font-size: xx-large;
     justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+/**********Link Settings**********/
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #7DAF5D;
+}
+
+a:visited {
+    color: #8f7351;
+}
+
+a:hover {
+    color: #57863a;
 }
 
 /***********Form*************/
