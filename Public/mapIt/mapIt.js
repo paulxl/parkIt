@@ -1,12 +1,12 @@
 //const { default: Axios } = require("axios");
-const fedPoints = [];
+const fedPoints = [{}];
 const day1 = new Date();
-console.log(day1);
+//console.log(day1);
 
 let year = day1.getFullYear();
-console.log("month  :" + day1.getMonth());
+//console.log("month  :" + day1.getMonth());
 let month = day1.getMonth() + 1;
-console.log("day  :" + day1.getDate());
+//console.log("day  :" + day1.getDate());
 let day = day1.getDate();
 
 fetch(
@@ -16,7 +16,7 @@ fetch(
     return response.json();
   })
   .then((data) => {
-    console.log(data);
+    // console.log(data);
 
     let sunrise1 = data.results.sunrise;
     let lrise = new Date(sunrise1);
@@ -100,11 +100,12 @@ fetch("https://parkbackside.herokuapp.com/fedParks")
     return response.json();
   })
   .then((data) => {
-    console.log("fedParks data " + data);
+    // console.log("fedParks data " + data);
     for (let i = 0; i < data.length; i++) {
       let name = data[i].name;
       let lat = data[i].lat;
       let long = data[i].long;
+      fedPoints.push(name, lat, long);
       // console.log(
       //   "point " + i + " name " + name + "  lat " + lat + "  long " + long
       // );
@@ -112,6 +113,7 @@ fetch("https://parkbackside.herokuapp.com/fedParks")
       // const fP = L.marker([`${lat}`, `${long}`], { icon: myIcon }).addTo(mymap);
     }
     //console.log("outside for loop .....");
+    console.log("on line 116  " + fedPoints);
   });
 function fedPit(lat, long) {
   console.log("inside fedPit");
@@ -123,7 +125,7 @@ fetch("https://parkbackside.herokuapp.com/localParks")
     return response.json();
   })
   .then((data1) => {
-    console.log("localParks " + data1);
+    //console.log("localParks " + data1);
   });
 
 fetch("https://parkbackside.herokuapp.com/stateParks")
@@ -131,9 +133,8 @@ fetch("https://parkbackside.herokuapp.com/stateParks")
     return response.json();
   })
   .then((data2) => {
-    console.log("stateParks " + data2);
+    // console.log("stateParks " + data2);
     // push data into Layer
-
     // then un-pack Layer to put onto map
   });
 //const p16 = L.marker([, ], { icon: myIcon }).addTo(mymap);
