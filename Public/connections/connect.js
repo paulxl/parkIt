@@ -90,15 +90,15 @@ function createCard(trip) {  // <<<<< sending array in
 let card = document.createElement("div")
 let name = document.createElement("h1")
 card.setAttribute("class", "card")
-card.style.width = "25em"
-card.style.margin = "5em"
+// card.style.width = "25em"
+// card.style.margin = "5em"
 
 
 
 
 let img = document.createElement("img")
 img.setAttribute("class", "cardImg")
-img.setAttribute("src", "/parkIt/Public/Parkit_photos/compassRose.png")
+img.setAttribute("src", "generic_card_photo.jpg")
 
 let savedInfo = document.createElement("p")
 savedInfo.innerHTML = trip.type;

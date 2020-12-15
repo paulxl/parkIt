@@ -14,12 +14,30 @@
 <body>
     
     <div class="header_div" id="top">
-        <div class="navbar">
+        <!-- <div class="navbar">
             <a class="active" href="#"><i class="fa fa-fw fa-home"></i></a>
             <a href="mapIt.html"><i class="fas fa-map-marked-alt"></i></a>
             <a href="link.html"><i class="fas fa-link"></i></a>
             <a href="connect.html"><i class="fa fa-fw fa-user"></i></a>
-          </div>
+          </div> -->
+          <!--Hamburger Menu-->
+          <div class="wrap">
+          <div class="dropdown">
+            <button class="dropbtn">
+                <div class="menuContainer" onclick="transformIcon(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </button>
+            <div class="dropdown-content" id="drop-menu">
+                <!-- <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+                <a href="index.html#about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a> -->
+                <a href="mapIt.html"><i class="fas fa-map-marked-alt"></i> Find A Hike</a>
+                <a href="connect.html"><i class="fa fa-fw fa-user"></i> Join A Hike</a>
+                <a href="link.html"><i class="fas fa-link"></i> Resources</a>
+            </div></div>
+        </div>
         <header>Park<button  class="typeWriter" onclick="pageIntroText()">(it);<span class="span2">&#8482;</span></button></header>
         <p class="typeWriter" id="intro-text"></p>
         <a href="#about"><button class="b_awesome"><i class="fas fa-chevron-down"></i></button></a>
