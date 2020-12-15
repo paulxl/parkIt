@@ -15,6 +15,11 @@ html {
     height: 5rem;
 }
 
+/* Remove box that shows around buttons when clicked */
+button {
+    outline: none;
+}
+
 /**********Menu Icon**********/
 .menuContainer {
     display: inline-block;
@@ -33,19 +38,20 @@ html {
 
 /* Rotate first bar */
 .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-8px, 5px);
-    transform: rotate(-45deg) translate(-8px, 5px);
+    -webkit-transform: rotate(-45deg) translate(-0.5rem, 0.3125rem);
+    transform: rotate(-45deg) translate(-0.5rem, 0.3125rem);
 }
 
-/* Fade out the second bar */
+/* Shift second bar slightly left*/
 .change .bar2 {
-    opacity: 0;
+    -webkit-transform: translate(-0.0625rem, 0);
+    transform: translate(-0.0625rem, 0);
 }
 
 /* Rotate last bar */
 .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -5px);
-    transform: rotate(45deg) translate(-8px, -5px);
+    -webkit-transform: rotate(45deg) translate(-0.5rem, -0.3125rem);
+    transform: rotate(45deg) translate(-0.5rem, -0.3125rem);
 }
 
 /* Style The Dropdown Button */
@@ -108,6 +114,13 @@ html {
     font-size: xxx-large;
 }
 
+#it_you {
+    font-family: 'Pacifico', cursive;
+    font-size: xxx-large;
+    background-color: transparent;
+    border: transparent;
+}
+
 /**********Banner**********/
 .banner_resources {
     z-index: 998;
@@ -135,11 +148,7 @@ h3 {
     margin: 0.25rem;
 }
 
-/**********List Settings**********/
-li {
-    padding-bottom: 0.5rem;
-}
-
+/**********Link Settings**********/
 a {
     text-decoration: none;
 }
