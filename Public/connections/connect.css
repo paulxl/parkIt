@@ -1,6 +1,6 @@
 body,
 html {
-    height: 100vh;
+    height: 100%;
     margin: 0;
     font-family: Proxima Nova, Arial, sans-serif;
 }
@@ -230,7 +230,7 @@ textarea {
 /**********Page Content Settings**********/
 #page_body {
     background-color: #E3E0D1;
-    height: 100%;
+    min-height: 100%;
 }
 
 /**********Card Settings**********/
@@ -276,6 +276,7 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 20fr 1fr 15fr 2fr;
     grid-template-rows: 1fr 10fr 1fr;
+    font-size: small;
 }
 
 .row3 {
