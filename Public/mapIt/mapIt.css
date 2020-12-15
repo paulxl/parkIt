@@ -1,4 +1,11 @@
-* {
+body {
+  background-color: rgba(224, 204, 179, 0.4);
+}
+
+h1,
+h3,
+h4,
+p {
   text-align: center;
   color: #0000cc;
   font-family: Proxima Nova, Arial, sans-serif;
@@ -12,20 +19,28 @@ i {
 }
 #todayRise,
 #todaySet {
-  color: #ff9933;
+  /* color: #ff9933; */
+  color: #e5892d;
+  margin: 0 2rem 0 2rem;
 }
 #todayDawn,
 #todayDusk {
-  color: #ffcc33;
+  color: rgb(24, 92, 39);
+  /* color: #ffcc33; */
+  margin: 0 2rem 0 2rem;
+}
+#sunInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #mapid {
-  height: auto;
-  width: 90%;
+  height: 800px;
+  width: 100%;
   transform-origin: 0 0;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 100px;
+
+  margin-bottom: 7rem;
 }
 
 /* .myDivIcon {
