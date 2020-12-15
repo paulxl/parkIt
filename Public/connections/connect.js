@@ -62,12 +62,15 @@ userInput.onsubmit = (event) => {
     let id = Date.now();  
     let type = document.getElementById("pullDownType").value;
     let organizer = document.getElementById("organizer").value;
-    let date = document.getElementById("date").value;
-    let time = document.getElementById("time").value;
-    let trail = document.getElementById("trail").value;
-    let meet = document.getElementById("meet").value;
+    let date1 = document.getElementById("date").value;
+    let time1 = document.getElementById("time1").value;
 
-    console.log({id, type, organizer, date, time, trail, meet})
+    console.log(time1);
+
+    let trail = document.getElementById("trail").value;
+    let meetLocation = document.getElementById("meet").value;
+
+    console.log({id, type, organizer, date1, time1, trail, meetLocation})
 // POST request on the backend
     // axios.post(`https://parkbackside.herokuapp.com/connections/${tempTrip}`).then(init());
     axios.post("https://parkbackside.herokuapp.com/connections",
@@ -75,10 +78,10 @@ userInput.onsubmit = (event) => {
          id,
           type,
            organizer,
-           date,
-           time,
+           date1,
+           time1,
            trail,
-           meet
+           meetLocation
     }).then(init())
     };
 
