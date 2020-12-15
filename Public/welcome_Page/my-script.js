@@ -13,3 +13,13 @@ function pageIntroText() {
         setTimeout(pageIntroText, speed);
     }
 }
+
+/*************  New NavBtn  *****************/
+/* Transforms the hamburg menu icon when clicked */
+function transformIcon(x) {
+    x.classList.toggle("change");
+}
+
+
+
+/********************************************/
