@@ -47,7 +47,9 @@ L.tileLayer(
   {
     attribution:
       'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 8,
+    zoom: 8,
+    minZoom: 7,
+    maxZoom: 10,
     id: "mapbox/streets-v11",
     tileSize: 512,
     zoomOffset: -1,
@@ -124,7 +126,14 @@ fetch("https://parkbackside.herokuapp.com/stateParks")
         .addTo(mymap);
     }
   });
-
+// const overlays = {
+//   Marker: marker,
+//   Roads: roadsLayer,
+// };
+// const baseLayers = {
+//   Marker: marker,
+// };
+// L.control.layers(baseLayers, overlays).addTo(mymap);
 const myIcon = L.divIcon({
   html: '<i class="fas fa-tree fa-2x"></i>',
   className: "myDivIcon",
