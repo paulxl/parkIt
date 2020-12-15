@@ -128,11 +128,13 @@ button {
     display: flex;
     align-items: center;
     height: 2rem;
-    background-color: #BA9669;
+    background-color: #5D4835;
     color: white;
     font-size: xx-large;
     justify-content: center;
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
 }
 
 /**********Link Settings**********/
