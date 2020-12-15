@@ -17,7 +17,7 @@ or actual website.*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../Parkit_photos/landing\ photo.JPG);
+    background-image: url(landing\ photo.JPG);
 }
 /* Makes class size and font style. Also makes font have a hover effect */
 .typeWriter {

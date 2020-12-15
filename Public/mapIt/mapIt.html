@@ -13,15 +13,49 @@
    crossorigin=""></script>
 
     <!-- <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script> -->
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Pacifico&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Grand+Hotel&family=Pacifico&family=Song+Myung&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"> -->
-
+    <script src="https://kit.fontawesome.com/16c1934ef9.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a61dca2231.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="mapIt.css">
     <title>playing with parks</title>
 </head>
+
 <body>
+    <!--NAVIGATION_BAR-->
+    <header id="parkIt_header">
+        <nav class="navbar-container">
+
+            <!--Hamburger Menu-->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <div class="menuContainer" onclick="transformIcon(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </button>
+                <div class="dropdown-content" id="drop-menu">
+                    <a href="index.html"><i class="fa fa-fw fa-home" style="color: #8f7351;"></i> Home</a>
+                    <a href="index.html#about"><i class="fa fa-info-circle" aria-hidden="true" style="color: #8f7351;"></i> About</a>
+                    <a href="mapIt.html"><i class="fas fa-map-marked-alt" style="color: #8f7351;"></i> Find A Hike</a>
+                    <a href="connect.html"><i class="fa fa-fw fa-user" style="color: #8f7351;"></i> Join A Hike</a>
+                    <a href="link.html"><i class="fas fa-link" style="color: #8f7351;"></i> Resources</a>
+                </div>
+            </div>
+
+            <!--Website Logo-->
+            <div class="navbar-brand">Park(<button id="it_you" data-text-swap="you">it</button>);
+            </div>
+        </nav>
+    </header>
+
+    <!--PAGE_BANNER-->
+    <h1 class="banner_resources">Find A Hike</h1>
+
+    <!--MAIN BODY-->
     <h2>Lets See Some Washington Parks</h2>
     <div id='outSun'>
         <h4>For Today:</h4>
@@ -31,7 +65,7 @@
         <div id='todaySet'></div>
         <div id='todayDusk'></div>
 </div>
-        <p><i id="pInfo">All times are in users time zone</i></p>
+        <p><i id="pInfo">All times are in user's time zone</i></p>
     </div>
 
     <h3>Click on the  <i class="fas fa-tree fa-2x"></i>  for the name of the park.</h3>

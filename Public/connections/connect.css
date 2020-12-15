@@ -1,6 +1,6 @@
 body,
 html {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     font-family: Proxima Nova, Arial, sans-serif;
 }
@@ -124,42 +124,232 @@ button {
 /**********Banner**********/
 .banner_resources {
     z-index: 998;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     height: 2rem;
-    background-color: #BA9669;
+    background-color: #5D4835;
     color: white;
     font-size: xx-large;
     justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
+}
+
+/**********Link Settings**********/
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #7DAF5D;
+}
+
+a:visited {
+    color: #8f7351;
+}
+
+a:hover {
+    color: #57863a;
 }
 
 /***********Form*************/
 #user_Input {
-    width: 62em;
-    margin-left: auto;
-    margin-right: auto;
+    z-index: 998;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row wrap;
+    align-items: flex-start;
+    background-color: #CAB394;
+    color: black;
+    font-size: large;
+    justify-content: center;
+}
 
+#input_Form {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 4fr 4fr 1fr 8fr 1fr 8fr 1fr 6fr 1fr 9fr 1fr 9fr 1fr 6fr 4fr;
+    height: 5rem;
 }
 
 h2 {
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .input1 {
-    display: flex;
-    justify-content: space-between;
+    display: block;
     margin: 0.5rem;
+}
 
+#in1 {
+    grid-area: 1 / 2 / 1 span / 1 span;
+}
+
+#in2 {
+    grid-area: 1 / 4 / 1 span / 1 span;
+}
+
+#in3 {
+    grid-area: 1 / 6 / 1 span / 1 span;
+}
+
+#time {
+    grid-area: 1 / 8 / 1 span / 1 span;
+}
+
+#in5 {
+    grid-area: 1 / 10 / 1 span / 1 span;
+}
+
+#in6 {
+    grid-area: 1 / 12 / 1 span / 1 span;
+}
+
+#in_btn {
+    grid-area: 1 / 14 / 1 span / 1 span;
 }
 
 #btn1 {
-    margin-top: .1em;
-    margin-left: 5em;
-    color: honeydew;
+    color: black;
     background-color: #7DAF5D;
-    font-size: 1.5em;
-    border-radius: 0.35em;
+    font-size: large;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+    height: 30%;
+    resize: none;
+}
+
+/**********Page Content Settings**********/
+#page_body {
+    background-color: #E3E0D1;
+    height: 100%;
+}
+
+/**********Card Settings**********/
+.carousel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0rem 1rem 1rem;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    transition: 0.3s;
+    border-radius: 0.5rem;
+}
+
+.card {
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 1rem;
+    background-color: honeydew;
+    width: 30rem;
+    height: 15rem;
+    margin: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 12fr 4fr 1fr;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.548);
+}
+
+.row1 {
+    grid-area: 2 / 1 / span 1 / span 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr 12fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+.row2 {
+    grid-area: 3 / 1 / span 1 / span 1;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr 15fr 2fr;
+    grid-template-rows: 1fr 10fr 1fr;
+}
+
+.row3 {
+    grid-area: 4 / 1 / span 1 / span 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+/* Add rounded corners to the image */
+img {
+    grid-area: 2 / 4 / span 1 / span 1;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.card_type {
+    grid-area: 1 / 2 / span 1 / span 1;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: large;
+}
+
+.card_trail_name {
+    grid-area: 1 / 3 / span 1 / span 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card_hike_data {
+    grid-area: 2 / 2 / span 1 / span 1;
+    text-align: left;
+    font-weight: bold;
+}
+
+.join_btn {
+    grid-area: 2 / 2 / span 1 / span 1;
+    border-radius: 1rem;
+    background-color: #7DAF5D;
+    color: rgb(185, 88, 9);
+    font-weight: bold;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    border: 0.125rem #806849;
+}
+
+.join_btn:hover {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.4);
+}
+
+.update_btn {
+    grid-area: 2 / 4 / span 1 / span 1;
+    border-radius: 1rem;
+    background-color: rgb(241, 241, 117);
+    color: #806849;
+    font-weight: bold;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    border: 0.125rem #806849;
+}
+
+.update_btn:hover {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.4);
+}
+
+.delete_btn {
+    grid-area: 2 / 6 / span 1 / span 1;
+    border-radius: 1rem;
+    background-color: rgb(224, 104, 6);
+    color: #427a1f;
+    font-weight: bold;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    border: 0.125rem #806849;
+}
+
+.delete_btn:hover {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.4);
 }
