@@ -42,6 +42,7 @@ userInput.onsubmit = (event) => {
     let id = Date.now();
     let type = document.getElementById("pullDownType").value;
     let organizer = document.getElementById("organizer").value;
+
     let date1 = document.getElementById("date1").value;
     let time1 = document.getElementById("time1").value;
 
@@ -69,6 +70,7 @@ userInput.onsubmit = (event) => {
         time1,
         trail,
         meetLocation
+
     }).then(init())
 };
 
