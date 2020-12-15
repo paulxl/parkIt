@@ -2,7 +2,7 @@ body {
   background-color: rgba(224, 204, 179, 0.4);
 }
 
-h1,
+h2,
 h3,
 h4,
 p {
@@ -36,14 +36,8 @@ i {
 }
 
 #mapid {
-  height: 800px;
-  width: 100%;
+  height: 50rem;
+  width: 95%;
+  margin-left: 2.5%;
   transform-origin: 0 0;
-
-  margin-bottom: 7rem;
 }
-
-/* .myDivIcon {
-  text-align: center;
-  color: red;
-} */
