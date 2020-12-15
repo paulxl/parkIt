@@ -1,5 +1,5 @@
 //const { default: Axios } = require("axios");
-const fedPoints = [{}];
+
 const day1 = new Date();
 //console.log(day1);
 
@@ -46,55 +46,20 @@ L.tileLayer(
   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
   {
     attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 8,
     id: "mapbox/streets-v11",
     tileSize: 512,
     zoomOffset: -1,
-    icon: '<i class="fas fa-tree fa-2x"></i>',
+    icon: '<i class="fas fa-tree fa-1x"></i>',
     accessToken:
       "pk.eyJ1IjoicGF1bHhsIiwiYSI6ImNraWl5enU3czBlNW8yeG4wMGVienhpa24ifQ.4KusJ-8HFO_APJdMPs8vWA",
   }
 ).addTo(mymap);
 
-//const marker1 = L.marker([47.61294, -122.48215]).addTo(mymap); // test marker : sits E. of Seattle
+const fedPoints = [];
 
-const myIcon = L.divIcon({
-  html: '<i class="fas fa-tree fa-2x"></i>',
-  className: "myDivIcon",
-});
-
-const p1 = L.marker([48.21403036, -122.6877213], { icon: myIcon }).addTo(mymap);
-const p2 = L.marker([45.62234841, -122.6617043], { icon: myIcon }).addTo(mymap);
-const p3 = L.marker([47.5993663, -122.3319664], { icon: myIcon }).addTo(mymap);
-const p4 = L.marker([48.17148735, -118.3513713], { icon: myIcon }).addTo(mymap);
-const p5 = L.marker([41.2646141052246, -95.9245147705078], {
-  icon: myIcon,
-}).addTo(mymap);
-
-const p6 = L.marker([46.21178735, -123.9638583], { icon: myIcon }).addTo(mymap);
-const p7 = L.marker([39.76948167, -100.8429548], { icon: myIcon }).addTo(mymap);
-const p8 = L.marker([42.80586068, -114.4449868], { icon: myIcon }).addTo(mymap);
-const p9 = L.marker([46.86075416, -121.7043885], { icon: myIcon }).addTo(mymap);
-const p10 = L.marker([46.07019093, -115.8761258], { icon: myIcon }).addTo(
-  mymap
-);
-const p11 = L.marker([48.71171756, -121.2069423], { icon: myIcon }).addTo(
-  mymap
-);
-const p12 = L.marker([47.80392754, -123.6663848], { icon: myIcon }).addTo(
-  mymap
-);
-const p13 = L.marker([48.51241933, -123.0610277], { icon: myIcon }).addTo(
-  mymap
-);
-const p14 = L.marker([46.04119286, -118.4629388], { icon: myIcon }).addTo(
-  mymap
-);
-const p15 = L.marker([47.59820858665, -122.322891226625], {
-  icon: myIcon,
-}).addTo(mymap);
-
+// GET Fed Parks from backside
 fetch("https://parkbackside.herokuapp.com/fedParks")
   .then((response) => {
     return response.json();
@@ -105,60 +70,66 @@ fetch("https://parkbackside.herokuapp.com/fedParks")
       let name = data[i].name;
       let lat = data[i].lat;
       let long = data[i].long;
-      fedPoints.push(name, lat, long);
-      // console.log(
-      //   "point " + i + " name " + name + "  lat " + lat + "  long " + long
-      // );
-      // fedPit(lat, long);
-      // const fP = L.marker([`${lat}`, `${long}`], { icon: myIcon }).addTo(mymap);
+      fedPoints.push({ name, lat, long });
     }
-    //console.log("outside for loop .....");
-    console.log("on line 116  " + fedPoints);
+    for (let i = 0; i < fedPoints.length; i++) {
+      let marker = new L.marker([fedPoints[i].lat, fedPoints[i].long], {
+        icon: myIcon,
+      })
+        .bindPopup(fedPoints[i].name)
+        .addTo(mymap);
+    }
   });
-function fedPit(lat, long) {
-  console.log("inside fedPit");
 
-  const fP = L.marker([lat, long], { icon: myIcon }).addTo(mymap);
-}
+const locPoints = [];
+// GET Local Parks from backside
 fetch("https://parkbackside.herokuapp.com/localParks")
   .then((response) => {
     return response.json();
   })
   .then((data1) => {
-    //console.log("localParks " + data1);
+    for (let j = 0; j < data1.length; j++) {
+      let name = data1[j].TR_NM;
+      let lat = data1[j].geometry.paths[1];
+      let long = data1[j].geometry.paths[0];
+      locPoints.push({ name, lat, long });
+    }
+    for (let k = 0; k < locPoints.length; k++) {
+      marker = new L.marker([locPoints[k].lat, locPoints[k].long], {
+        icon: myIcon,
+      })
+        .bindPopup(locPoints[k].name)
+        .addTo(mymap);
+    }
   });
 
+const statePoints = [];
+// GET State Parks from backside
 fetch("https://parkbackside.herokuapp.com/stateParks")
   .then((response) => {
     return response.json();
   })
   .then((data2) => {
-    // console.log("stateParks " + data2);
-    // push data into Layer
-    // then un-pack Layer to put onto map
+    for (let k = 0; k < data2.length; k++) {
+      let name = data2[k].ParkName;
+      let lat = data2[k].Lat;
+      let long = data2[k].Long;
+      statePoints.push({ name, lat, long });
+    }
+    for (let j = 0; j < statePoints.length; j++) {
+      marker = new L.marker([statePoints[j].lat, statePoints[j].long], {
+        icon: myIcon,
+      })
+        .bindPopup(statePoints[j].name)
+        .addTo(mymap);
+    }
   });
-//const p16 = L.marker([, ], { icon: myIcon }).addTo(mymap);
-//const p17 = L.marker([, ], { icon: myIcon }).addTo(mymap);
-//bindPopup("<b></b><br>");
 
-// for loop to bring in json lat & long of parks
-// const = L.marker([], { icon: myIcon }).addTo(mymap);
-// bindPopup('<b></b><br>');
+const myIcon = L.divIcon({
+  html: '<i class="fas fa-tree fa-2x"></i>',
+  className: "myDivIcon",
+  color: "#27823F",
+});
 
-// example below **************
-
-// const homeMarker = L.marker([27.34365, -82.4515]).addTo(mymap);
-// homeMarker.bindPopup("<b>Home Base</b><br>Starting Point");
-
-// const nbPark = L.marker([27.3709813, -82.4495922], { icon: myIcon }).addTo(
-//   mymap
-// );
-// nbPark.bindPopup(
-//   "<b>Nathan Benderson Park</b><br>Large multi-purpose park<br>Dog Friendly"
-// );
-// const axios = require("axios");
-
-// axios.get("https://parkbackside.herokuapp.com/fedParks").then((res) => {
-//   const fedParks = res.data1;
-//   console.log(fedParks);
-// });
+// const marker1 = L.marker([47.61294, -122.48215], { icon: myIcon }).addTo(mymap);
+// marker1.bindPopup("Seattle");
