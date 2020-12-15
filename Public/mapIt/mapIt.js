@@ -47,7 +47,6 @@ L.tileLayer(
   {
     attribution:
       'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    zoom: 8,
     minZoom: 7,
     maxZoom: 10,
     id: "mapbox/streets-v11",
