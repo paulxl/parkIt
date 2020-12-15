@@ -27,11 +27,11 @@
                     </div>
                 </button>
                 <div class="dropdown-content" id="drop-menu">
-                    <a href="index.html">Home</a>
-                    <a href="index.html#about">About</a>
-                    <a href="mapIt.html">Find A Hike</a>
-                    <a href="connect.html">Join A Hike</a>
-                    <a href="link.html">Resources</a>
+                    <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+                    <a href="index.html#about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+                    <a href="mapIt.html"><i class="fas fa-map-marked-alt"></i> Find A Hike</a>
+                    <a href="connect.html"><i class="fa fa-fw fa-user"></i> Join A Hike</a>
+                    <a href="link.html"><i class="fas fa-link"></i> Resources</a>
                 </div>
             </div>
 
@@ -45,55 +45,79 @@
     <h1 class="banner_resources">Join A Hike</h1>
 
     <!--MAIN BODY-->
-    <h2>Create a hike</h2>
-
+    <!-- <h2>Create a hike</h2> -->
     <div id="user_Input">
         <form action="" id="input_Form">
-            <div class="input1">
+            <div class="input1" id="in1">
                 <label for="type">Type</label>
-
                 <select id="pullDownType">
-
                     <option value="hike">Hike </option>
-
                     <option value="bike">Bike</option>
-
                     <option value="run">Run</option>
-
-
                 </select>
             </div>
-
-            <div class="input1">
-                <label for="">Organizer</label>
-                <input type="text" name="organizer" placeholder="Your name here" id="organizer"></div>
-            <div class="input1">
-                <label for="">Pick Date</label><input type="date" name="" placeholder="" id="date"></div>
-
-            <div class="input1" id='time'>
-                <label for="date">Pick time</label>
-                <input type="time" name="time" id="time">
+            <div class="input1" id="in2">
+                <label for="trail">Trail Name</label>
+                <input type="text" name="trail" placeholder="Enter trail name here." id="trail" style="width: 8rem;">
             </div>
-            <div class="input1">
-                <label for="">Trail</label><input type="text" name="trail" placeholder="" id="trail"></div>
-            <div class="input1">
-                <label for="">Meeting Location</label><textarea name="meet" placeholder="Location To meet" id="meet"
-                    rows="5"></textarea></div>
-            <div class="input1">
-                <button id="btn1" type="submit">Create</button></div>
-
-
-
-
-
-
+            <div class="input1" id="in3">
+                <label for="meetingDate">Date</label>
+                <input type="date" name="meetingDate" placeholder="" id="date" style="width: 8rem;">
+            </div>
+            <div class="input1" id='time'>
+                <label for="meetingTime">Time</label>
+                <input type="time" name="meetingTime" id="time" style="width: 6rem;">
+            </div>
+            <div class="input1" id="in5">
+                <label for="organizer">Organizer</label>
+                <input type="text" name="organizer" placeholder="Enter organizer's name." id="organizer"
+                    style="width: 9rem;">
+            </div>
+            <div class="input1" id="in6">
+                <label for="meetingLocation">Meeting Location</label>
+                <textarea name="meetingLocation" placeholder="Enter meetup location details." id="meet"
+                    rows="5"></textarea>
+            </div>
+            <div class="input1" id="in_btn">
+                <p></p>
+                <button id="btn1" type="submit">Create</button>
+            </div>
         </form>
     </div>
-    <div id="breakPic"></div>
-    <div id="container"></div>
 
+    <div id="page_body">
+        <h2>Upcoming Hikes</h2>
 
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+=======
+        <!--Card List-->
+        <div class="carousel">
+            <div class="card">
+                <div class="row1">
+                    <div class="card_type">HIKE</div>
+                    <div class="card_trail_name">Upper Nisqually Falls</div>
+                </div>
+                <div class="row2">
+                    <ul class="card_hike_data">
+                        <li>Date: 12/15/2020</li>
+                        <li>Time: 09:30 am</li>
+                        <li>Location: SE Trailhead</li>
+                        <li>Organizer: Paul Lewis</li>
+                        <li>RSVP: 2 Hiker(s)</li>
+                    </ul>
+                    <img src="generic_card_photo.jpg" alt="stock trail photo">
+                </div>
+                <div class="row3">
+                    <button class="join_btn">JOIN</button>
+                    <button class="update_btn">UPDATE</button>
+                    <button class="delete_btn">DELETE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+>>>>>>> c461207e8370dd02d712cdd8eb2caae94f5b0f64
     <script src="connect.js"></script>
 </body>
 

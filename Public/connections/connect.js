@@ -93,37 +93,90 @@ card.setAttribute("class", "card")
 card.style.width = "25em"
 card.style.margin = "5em"
 
+
+
+
 let img = document.createElement("img")
 img.setAttribute("class", "cardImg")
 img.setAttribute("src", "/parkIt/Public/Parkit_photos/compassRose.png")
 
-let newId = document.createElement("h2")
-newId.innerHTML = trip.id
 let savedInfo = document.createElement("p")
 savedInfo.innerHTML = trip.type;
-let org = document.createElement("p")
-org.innerHTML = trip.organizer
+savedInfo.setAttribute("class", "card_type")
+let trail = document.createElement("p")
+trail.innerHTML = trip.trail
 let date = document.createElement("p")
 date.innerHTML = trip.date1
 let time = document.createElement("p")
 time.innerHTML = trip.time1
-let trail = document.createElement("p")
-trail.innerHTML = trip.trail
 let meet = document.createElement("p")
 meet.innerHTML = trip.meetLocation
+let org = document.createElement("p")
+org.innerHTML = trip.organizer
+let newId = document.createElement("h2")
+newId.innerHTML = trip.id
 
 let deleteBtn = document.createElement("button")
 deleteBtn.innerHTML = "Delete"
 deleteBtn.id = "delete_Form"
+deleteBtn.setAttribute("class", "delete_btn")
 let updateBtn = document.createElement("button")
 updateBtn.innerHTML = "Update"
+updateBtn.setAttribute("class", "update_btn")
 updateBtn.id = "update_Form"
-// savedInfo.id = ""
-// savedInfo.innerHTML = stored
-card.append(img, newId, savedInfo, org, date,time,trail,meet,    updateBtn
-    , deleteBtn)
+let joinBtn = document.createElement("button")
+joinBtn.innerHTML = "Join"
+joinBtn.setAttribute("class", "join_btn")
+
+// create divs for each new element
+let card_cara = document.createElement("div")
+card_cara.setAttribute("class", "carousel")
+let divRow = document.createElement("div")
+divRow.setAttribute("class", "row1")
+
+let diveType = document.createElement("div")
+diveType.setAttribute("class", "card_type")
+diveType.innerHTML = trip.type;
+let divTrailName = document.createElement("div")
+divTrailName.setAttribute("class", "card_trail_name")
+divTrailName.innerHTML = trip.trail;
+
+divRow.append(diveType, divTrailName)
+
+let divRow2 = document.createElement("div")
+divRow2.setAttribute("class", "row2")
+let list = document.createElement("ul");
+list.setAttribute("class", "card_hike_data");
+
+let listDate = document.createElement("li")
+listDate.appendChild(document.createTextNode(trip.date1))
+let listTime = document.createElement("li")
+listTime.appendChild(document.createTextNode(trip.time1))
+let listMeet = document.createElement("li")
+listMeet.appendChild(document.createTextNode(trip.meetLocation))
+let listOrganizer = document.createElement("li")
+listOrganizer.appendChild(document.createTextNode(trip.organizer))
+let listRsvp = document.createElement("li")
+listRsvp.appendChild(document.createTextNode("RSVP: N/A"))
+list.style.listStyleType = "dot"
+list.append(listDate, listTime, listMeet, listOrganizer, listRsvp)
+
+divRow2.append(list, img)
+
+let divRow3Btn = document.createElement("div")
+divRow3Btn.setAttribute("class", "row3")
+divRow3Btn.append(joinBtn, updateBtn, deleteBtn)
+
+
+
+
+
+//append divs and create card
+card_cara.append(card)
+card.append(divRow, divRow2, divRow3Btn)
+
 // div.append(card, name, img,  savedInfo, deleteBtn, updateBtn);
-document.querySelector("#container").appendChild(card)
+document.querySelector("#page_body").appendChild(card)
 
 // when we create card, also create an UPDATE button and a DELETE button
     

@@ -1,4 +1,164 @@
-* {
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Proxima Nova, Arial, sans-serif;
+}
+
+.navbar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem 0rem;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    height: 5rem;
+}
+
+/* Remove box that shows around buttons when clicked */
+button {
+    outline: none;
+}
+
+/**********Menu Icon**********/
+.menuContainer {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 2.1875rem;
+    height: 0.1875rem;
+    background-color: black;
+    margin: 0.375rem 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-0.5rem, 0.3125rem);
+    transform: rotate(-45deg) translate(-0.5rem, 0.3125rem);
+}
+
+/* Shift second bar slightly left*/
+.change .bar2 {
+    -webkit-transform: translate(-0.0625rem, 0);
+    transform: translate(-0.0625rem, 0);
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-0.5rem, -0.3125rem);
+    transform: rotate(45deg) translate(-0.5rem, -0.3125rem);
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    border-radius: 1.25rem;
+    background-color: #7DAF5D;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 10rem;
+    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    font-size: large;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #81A165;
+}
+
+/**********Logo**********/
+.navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    font-family: 'Pacifico', cursive;
+    font-size: xxx-large;
+}
+
+#it_you {
+    font-family: 'Pacifico', cursive;
+    font-size: xxx-large;
+    background-color: transparent;
+    border: transparent;
+}
+
+/**********Banner**********/
+.banner_resources {
+    z-index: 998;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    background-color: #5D4835;
+    color: white;
+    font-size: xx-large;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
+}
+
+/**********Link Settings**********/
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #7DAF5D;
+}
+
+a:visited {
+    color: #8f7351;
+}
+
+a:hover {
+    color: #57863a;
+}
+
+/**********Other Settings**********/
+h2,
+h3,
+h4,
+p {
   text-align: center;
   color: #0000cc;
   font-family: Proxima Nova, Arial, sans-serif;
@@ -10,25 +170,28 @@
 i {
   color: green;
 }
+
 #todayRise,
 #todaySet {
-  color: #ff9933;
+  /* color: #ff9933; */
+  color: #e5892d;
+  margin: 0 2rem 0 2rem;
 }
 #todayDawn,
 #todayDusk {
-  color: #ffcc33;
+  color: rgb(24, 92, 39);
+  /* color: #ffcc33; */
+  margin: 0 2rem 0 2rem;
+}
+#sunInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #mapid {
-  height: auto;
-  width: 90%;
+  height: 50rem;
+  width: 95%;
+  margin-left: 2.5%;
   transform-origin: 0 0;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 100px;
 }
-
-/* .myDivIcon {
-  text-align: center;
-  color: red;
-} */

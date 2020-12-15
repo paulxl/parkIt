@@ -128,24 +128,13 @@ button {
     display: flex;
     align-items: center;
     height: 2rem;
-    background-color: #BA9669;
+    background-color: #5D4835;
     color: white;
     font-size: xx-large;
     justify-content: center;
-}
-
-/**********Section Headers**********/
-section {
-    font-size: large;
-}
-
-h2 {
-    font-size: xx-large;
-}
-
-h3 {
-    font-size: xx-large;
-    margin: 0.25rem;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
 }
 
 /**********Link Settings**********/
@@ -163,6 +152,20 @@ a:visited {
 
 a:hover {
     color: #57863a;
+}
+
+/**********Section Headers**********/
+section {
+    font-size: large;
+}
+
+h2 {
+    font-size: xx-large;
+}
+
+h3 {
+    font-size: xx-large;
+    margin: 0.25rem;
 }
 
 /**********Category Settings**********/
