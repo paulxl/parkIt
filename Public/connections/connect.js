@@ -194,6 +194,4 @@ function updateTrip(trip) {
 
     // come up with a trip id
 
-
-
 }
