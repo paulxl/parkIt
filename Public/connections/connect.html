@@ -87,33 +87,58 @@
         </form>
     </div>
 
+    <!--Bulletin Board for Upcoming Hikes-->
     <div id="page_body">
         <h2>Upcoming Hikes</h2>
 
+        <!--Pop-Up Form-->
+        <div class="form-popup" id="myForm">
+            <form action="" class="form-container">
+              <h1 id="titlePU">Update Trip Details</h1>
+          
+              <div id="pullDownTypePU_label">
+                  <label for="type">Type</label>
+                  <select id="pullDownTypePU">
+                      <option value="HIKE">HIKE</option>
+                      <option value="BIKE">BIKE</option>
+                      <option value="RUN">RUN</option>
+                  </select>
+              </div>
+            
+              <div id="trailPU_label">
+                  <label for="trail">Trail Name</label>
+                  <input type="text" name="trail" placeholder="Enter trail name here." id="trailPU" style="width: 8rem;">
+              </div>
+
+              <div id="datePU_label">
+                  <label for="meetingDate">Date</label>
+                  <input type="date" name="meetingDate" placeholder="" id="datePU" style="width: 8rem;">
+              </div>
+
+              <div id="timePU_label">
+                  <label for="meetingTime">Time</label>
+                  <input type="time" name="meetingTime" id="timePU" style="width: 6rem;">
+              </div>
+
+              <div id="organizerPU_label">
+                  <label for="organizer">Organizer</label>
+                  <input type="text" name="organizer" placeholder="Enter organizer's name." id="organizerPU"
+                      style="width: 9rem;">
+              </div>
+
+              <div id="meetPU_label">
+                  <label for="meetingLocation">Meeting Location</label>
+                  <textarea name="meetingLocation" placeholder="Enter meetup location details." id="meetPU"
+                      rows="3"></textarea>
+              </div>
+          
+              <button type="submit" class="btnUp" id="send_upd8_btn">Update</button>
+              <button type="submit" class="btnUp cancel" id="cancel_upd8_btn" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+
         <!--Card List-->
-        <div class="carousel" id="card_carousel">
-            <!-- <div class="card">
-                <div class="row1">
-                    <div class="card_type">HIKE</div>
-                    <div class="card_trail_name">Upper Nisqually Falls</div>
-                </div>
-                <div class="row2">
-                    <ul class="card_hike_data">
-                        <li>Date: 12/15/2020</li>
-                        <li>Time: 09:30 am</li>
-                        <li>Location: SE Trailhead</li>
-                        <li>Organizer: Paul Lewis</li>
-                        <li>RSVP: 2 Hiker(s)</li>
-                    </ul>
-                    <img src="generic_card_photo.jpg" alt="stock trail photo">
-                </div>
-                <div class="row3">
-                    <button class="join_btn">JOIN</button>
-                    <button class="update_btn">UPDATE</button>
-                    <button class="delete_btn">DELETE</button>
-                </div>
-            </div> -->
-        </div>
+        <div class="carousel" id="card_carousel"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
