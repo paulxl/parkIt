@@ -54,7 +54,7 @@ L.tileLayer(
     zoomOffset: -1,
     icon: '<i class="fas fa-tree fa-1x"></i>',
     accessToken:
-      "pk.eyJ1IjoicGF1bHhsIiwiYSI6ImNraWl5enU3czBlNW8yeG4wMGVienhpa24ifQ.4KusJ-8HFO_APJdMPs8vWA",
+      "fill this in",
   }
 ).addTo(mymap);
 
